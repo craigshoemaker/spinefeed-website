@@ -18,8 +18,6 @@ const app = new Vue({
                 const data = app.article;
     
                 const response = await axios.post(url, data, headers);
-
-                console.log(response.data.details);
                 
                 app.markup = response.data.details;
             } catch(ex) {
