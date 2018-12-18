@@ -10,16 +10,17 @@ const app = new Vue({
     methods: {
         getFeedback: async (contentType, output) => {
             try {
-                contentType = 'quickstart';
-                output = 'html';
-
-                const url = `${SPINEFEED_URL}?type=${contentType}&output=${output}`;
-                const headers = { 'Content-Type': 'application/json' };
-                const data = app.article;
-    
-                const response = await axios.post(url, data, headers);
-                
-                app.markup = response.data.details;
+                if(app.article.length > 0 && app.type.length > 0) {
+                    const url = `${SPINEFEED_URL}?type=${app.type}&output=html`;
+                    const headers = { 'Content-Type': 'application/json' };
+                    const data = app.article;
+        
+                    const response = await axios.post(url, data, headers);
+                    
+                    app.markup = response.data.details;
+                } else {
+                    alert('Please enter your article text and select a type.');
+                }
             } catch(ex) {
                 console.log(ex);
             }

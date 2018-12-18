@@ -27,3 +27,11 @@
 .feedback-button {
     margin-top:10px;
 }
+
+.article-types {
+    margin:10px;
+}
+
+.article-types label {
+    margin-right: 10px;
+}
