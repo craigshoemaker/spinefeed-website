@@ -10,7 +10,10 @@ const app = new Vue({
     methods: {
         getFeedback: async (contentType, output) => {
             try {
-                if(app.article.length > 0 && app.type.length > 0) {
+                const hasArticleText = app.article && app.article.length > 0;
+                const hasType = app.type && app.type.length > 0;
+
+                if(hasArticleText && hasType) {
                     const url = `${SPINEFEED_URL}?type=${app.type}&output=html`;
                     const headers = { 'Content-Type': 'application/json' };
                     const data = app.article;
