@@ -1,0 +1,29 @@
+.response {
+    margin-left: 20px;
+}
+
+.response h2,
+.response h3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+.response h2 {
+    font-size: 1.3em;
+}
+
+.response h3 {
+    font-size: 1.1em;
+}
+
+.response ul li {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+#app {
+    margin-top: 10px;
+}
+
+.feedback-button {
+    margin-top:10px;
+}

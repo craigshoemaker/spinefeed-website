@@ -1,0 +1,22 @@
+{
+  "name": "spinefeed-website",
+  "version": "1.0.0",
+  "description": "Public UI for Spinefeed",
+  "main": "index.html.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigshoemaker/spinefeed-website.git"
+  },
+  "author": "Craig Shoemaker <craig@craigshoemaker.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/craigshoemaker/spinefeed-website/issues"
+  },
+  "homepage": "https://github.com/craigshoemaker/spinefeed-website#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
