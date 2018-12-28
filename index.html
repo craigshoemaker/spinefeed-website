@@ -12,11 +12,11 @@
             <div class="columns">
                 <div class="column is-one-third">
                     <div class="article-types">
-                        <input type="radio" id="overview" value="overview" v-model="type">
+                        <input type="radio" id="overview" name="type" value="overview" v-model="type">
                         <label for="overview">Overview</label>
-                        <input type="radio" id="quickstart" value="quickstart" v-model="type">
+                        <input type="radio" id="quickstart" name="type" value="quickstart" v-model="type">
                         <label for="quickstart">Quickstart</label>
-                        <input type="radio" id="tutorial" value="tutorial" v-model="type">
+                        <input type="radio" id="tutorial" name="type" value="tutorial" v-model="type">
                         <label for="tutorial">Tutorial</label>
                     </div>
                     <textarea class="textarea input" autofocus v-model="article" placeholder="Enter your article text here"></textarea>
