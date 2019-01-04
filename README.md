@@ -1,3 +1,3 @@
 ![Spinefeed logo](spinefeed-logo.png)
 
-Public UI for [Spinefeed](https://github.com/craigshoemaker/spinefeed-function). View the website to [get feedback on your article](http://craigshoemaker.github.io/spinefeed-website).
+Public UI for [Spinefeed](https://github.com/craigshoemaker/spinefeed-function). To get feedback on your Azure docs articles, [use the website](http://craigshoemaker.github.io/spinefeed-website) or [VS Code extension](http://craigshoemaker.github.io/spinefeed-extension).
