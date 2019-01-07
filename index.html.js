@@ -31,11 +31,19 @@ const app = new Vue({
 
         getFeedback: async function (contentType, output) {
             try {
+                let type;
+                let hasValidType;
+                let showAlert = false;
                 const hasArticleText = app.article && app.article.length > 0;
-                const type = this.getArticleType(app.article);
-                const hasValidType = this.isValidType(type);
 
                 app.isLoading = false;
+
+                if(hasArticleText) {
+                    type = this.getArticleType(app.article);
+                    hasValidType = this.isValidType(type);
+                } else {
+                    showAlert = true;
+                }
                 
                 if(hasArticleText && hasValidType) {
                     const url = `${SPINEFEED_URL}?type=${type}&output=html`;
@@ -49,8 +57,13 @@ const app = new Vue({
                     
                     app.markup = response.data.details;
                 } else {
+                    showAlert = true;
+                }
+
+                if(showAlert) {
                     alert('Invalid article type. Spinefeed only provides feedback for Quickstarts, Tutorials, and Overview articles. You can change the article type by updating the "ms.topic" field in the article metadata.');
                 }
+                
             } catch(ex) {
                 console.log(ex);
             }
