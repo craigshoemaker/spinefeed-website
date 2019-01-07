@@ -5,7 +5,8 @@ const app = new Vue({
     el: '#app',
     data: { 
         article: '',
-        markup: ''
+        markup: '',
+        isLoading: false
     },
     methods: {
 
@@ -34,12 +35,17 @@ const app = new Vue({
                 const type = this.getArticleType(app.article);
                 const hasValidType = this.isValidType(type);
 
+                app.isLoading = false;
+                
                 if(hasArticleText && hasValidType) {
-                    const url = `${SPINEFEED_URL}?type=${app.type}&output=html`;
+                    const url = `${SPINEFEED_URL}?type=${type}&output=html`;
                     const headers = { 'Content-Type': 'application/json' };
                     const data = app.article;
-        
+                    
+                    app.markup = '';
+                    app.isLoading = true;
                     const response = await axios.post(url, data, headers);
+                    app.isLoading = false;
                     
                     app.markup = response.data.details;
                 } else {
