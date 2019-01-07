@@ -61,9 +61,9 @@ const app = new Vue({
                 }
 
                 if(showAlert) {
-                    alert('Invalid article type. Spinefeed only provides feedback for Quickstarts, Tutorials, and Overview articles. You can change the article type by updating the "ms.topic" field in the article metadata.');
+                    alert('Invalid article type. Spinefeed only provides feedback for Quickstarts, Tutorials, and Overview articles.\n\nYou can change the article type by updating the "ms.topic" field in the article metadata.');
                 }
-                
+
             } catch(ex) {
                 console.log(ex);
             }
