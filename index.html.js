@@ -27,7 +27,8 @@ const app = new Vue({
     
             return !!types[type];
         },
-        getFeedback: async (contentType, output) => {
+
+        getFeedback: async function (contentType, output) {
             try {
                 const hasArticleText = app.article && app.article.length > 0;
                 const type = this.getArticleType(app.article);
