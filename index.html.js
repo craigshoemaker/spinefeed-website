@@ -10,16 +10,6 @@ const app = new Vue({
     },
     methods: {
 
-        isValidType: (type) => {
-            const types = {
-                quickstart: true,
-                tutorial: true,
-                overview: true,
-            }
-    
-            return !!types[type];
-        },
-
         getFeedback: async function (contentType, output) {
             try {
                 const hasArticleText = app.article && app.article.length > 0;
@@ -27,7 +17,6 @@ const app = new Vue({
                 app.isLoading = false;
                 
                 if(hasArticleText) {
-                    type = this.getArticleType(app.article);
                     const url = `${SPINEFEED_URL}?output=html`;
                     const headers = { 'Content-Type': 'application/json' };
                     const data = app.article;
