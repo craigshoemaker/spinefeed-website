@@ -26,7 +26,7 @@ const app = new Vue({
                     const response = await axios.post(url, data, headers);
                     app.isLoading = false;
                     
-                    app.markup = response.data.details;
+                    app.markup = response.data.details.string;
                 } else {
                     alert('Invalid article type. Spinefeed only provides feedback for Quickstarts, Tutorials, and Overview articles.\n\nYou can change the article type by updating the "ms.topic" field in the article metadata.');
                 }
